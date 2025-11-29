@@ -48,7 +48,7 @@ const portfolio = {
           </div>
         )
       },
-      "lane-detection": {
+      "web-crawler": {
         isFolder: false,
         content: (
           <div>
