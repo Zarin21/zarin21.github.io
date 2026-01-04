@@ -4,8 +4,8 @@ const portfolio = {
   "about.md": {
     isFolder: false,
     content: (
-      <div className="max-w-xl">
-        <p>Zarin Subah</p>
+      <div className="max-w-xl text-xs sm:text-sm">
+        <p className="text-white">Zarin Subah</p>
         <p className="text-gray-400 mt-1">Software Developer</p>
         <p className="text-gray-400 mt-1">Interested in:</p>
         <ul className="list-disc list-inside text-gray-400">
@@ -19,16 +19,16 @@ const portfolio = {
   "experience.txt": {
     isFolder: false,
     content: (
-      <div className="space-y-4">
+      <div className="space-y-4 text-xs sm:text-sm">
         <div>
-          <span className="text-yellow-500">Project Developer @ Blueprint</span>
-          <p className="text-gray-400 text-sm">Oct. 2025 - Present</p>
+          <span className="text-yellow-500 block sm:inline">Project Developer @ Blueprint</span>
+          <p className="text-gray-400 text-xs sm:text-sm">Oct. 2025 - Present</p>
           <p className="text-gray-300">- Go, PostgreSQL. Deployed on Supabase.</p>
           <p className="text-gray-300">- Developing the backend of an application portal.</p> 
         </div>
         <div>
-          <span className="text-yellow-500">Research Assistant @ University of Alberta</span>
-          <p className="text-gray-400 text-sm">May 2025 - Aug. 2025</p>
+          <span className="text-yellow-500 block sm:inline">Research Assistant @ University of Alberta</span>
+          <p className="text-gray-400 text-xs sm:text-sm">May 2025 - Aug. 2025</p>
           <p className="text-gray-300">- Developed a Java/C++ graphics rendering application.</p>
           <p className="text-gray-300">- Research project: Finding Periodic trajectories on a billards table.</p>
         </div>
@@ -41,32 +41,32 @@ const portfolio = {
       "tinker": {
         isFolder: false,
         content: (
-          <div>
+          <div className="text-xs sm:text-sm">
             <p className="text-green-500">Recommendation system using Stochastic Gradient Descent</p>
             <p className="text-gray-400">Mobile app & web scraping service: Python, Selenium, Java, Android Studio.</p>
-            <a href="https://github.com/tinker-app/tinker" className="text-blue-500 underline">Github</a>
+            <a href="https://github.com/tinker-app/tinker" className="text-blue-500 underline break-all">Github</a>
           </div>
         )
       },
       "web-crawler": {
         isFolder: false,
         content: (
-          <div>
+          <div className="text-xs sm:text-sm">
             <p className="text-green-500">Web Crawler & Search Engine</p>
             <p className="text-gray-400">React frontend & Spring backend with MongoDB.</p>
             <p className="text-gray-400">Used Inverted Index table for fast queries.</p>
-            <a href="https://github.com/Zarin21/Web-Crawler " className="text-blue-500 underline">Github</a>
+            <a href="https://github.com/Zarin21/Web-Crawler " className="text-blue-500 underline break-all">Github</a>
           </div>
         )
       },
       "regression-model": {
         isFolder: false,
         content: (
-          <div>
+          <div className="text-xs sm:text-sm">
             <p className="text-green-500">Focus tracking service</p>
             <p className="text-gray-400">Machine learning with EEG brainwaves and pupil diameter to infer real-time productivity.</p>
             <p className="text-gray-400">Frontend: React & WebSockets, Backend: FastAPI, Node.js, DB: Pocketbase with SQLite</p>
-            <a href="https://github.com/LeFocus/regression-model" className="text-blue-500 underline">Github</a>
+            <a href="https://github.com/LeFocus/regression-model" className="text-blue-500 underline break-all">Github</a>
           </div>
         )
       }
@@ -76,10 +76,10 @@ const portfolio = {
   "links.txt": {
     isFolder: false,
     content: (
-      <div className="flex flex-col">
-        <a href="https://github.com/Zarin21" className="text-blue-500 hover:underline">github.com/Zarin21</a>
-        <a href="https://linkedin.com/in/zsubah" className="text-blue-500 hover:underline">linkedin.com/in/zsubah</a>
-        <a href="mailto:zszarin021@gmail.com" className="text-blue-500 hover:underline">zszarin021@gmail.com</a>
+      <div className="flex flex-col text-xs sm:text-sm">
+        <a href="https://github.com/Zarin21" className="text-blue-500 hover:underline break-all">github.com/Zarin21</a>
+        <a href="https://linkedin.com/in/zsubah" className="text-blue-500 hover:underline break-all">linkedin.com/in/zsubah</a>
+        <a href="mailto:zszarin021@gmail.com" className="text-blue-500 hover:underline break-all">zszarin021@gmail.com</a>
       </div>
     )
   }
@@ -88,8 +88,9 @@ const portfolio = {
 const AVAILABLE_COMMANDS = ['ls', 'cat', 'cd', 'clear', 'help', 'open'];
 
 const Prompt = ({ path = "~" }) => (
-  <div className="flex gap-1 mr-2 whitespace-nowrap">
-    <span className="text-green-400">guest@Zarin-MacBook</span>
+  <div className="flex gap-1 mr-2 whitespace-nowrap text-xs sm:text-sm shrink-0">
+    <span className="text-green-400 hidden sm:inline">guest@Zarin-MacBook</span>
+    <span className="text-green-400 sm:hidden">guest@Mac</span>
     <span className="text-blue-400">{path === "~" ? "" : path}$</span>
   </div>
 );
@@ -198,17 +199,17 @@ export default function App() {
     } 
     else if (cmd === 'help') {
         output = (
-            <div className="text-gray-300 space-y-2">
+            <div className="text-gray-300 space-y-2 text-xs sm:text-sm">
                 <div className="text-white font-semibold mb-3">Available Commands:</div>
                 <div className="space-y-1">
-                    <div><span className="text-yellow-400">ls</span> - List files and directories in the current location</div>
-                    <div><span className="text-yellow-400">cat [file]</span> - Display the contents of a file</div>
-                    <div><span className="text-yellow-400">cd [directory]</span> - Change directory (use 'cd ..' to go back, 'cd ~' for home)</div>
-                    <div><span className="text-yellow-400">open [file]</span> - Open and display a file (same as cat)</div>
-                    <div><span className="text-yellow-400">clear</span> - Clear the terminal screen</div>
-                    <div><span className="text-yellow-400">help</span> - Show this help message</div>
+                    <div className="break-words"><span className="text-yellow-400">ls</span> - List files and directories in the current location</div>
+                    <div className="break-words"><span className="text-yellow-400">cat [file]</span> - Display the contents of a file</div>
+                    <div className="break-words"><span className="text-yellow-400">cd [directory]</span> - Change directory (use 'cd ..' to go back, 'cd ~' for home)</div>
+                    <div className="break-words"><span className="text-yellow-400">open [file]</span> - Open and display a file (same as cat)</div>
+                    <div className="break-words"><span className="text-yellow-400">clear</span> - Clear the terminal screen</div>
+                    <div className="break-words"><span className="text-yellow-400">help</span> - Show this help message</div>
                 </div>
-                <div className="text-gray-500 text-sm mt-3">Tip: Use Tab for command and file name autocompletion</div>
+                <div className="text-gray-500 text-xs sm:text-sm mt-3">Tip: Use Tab for command and file name autocompletion</div>
             </div>
         );
     }
@@ -236,7 +237,7 @@ export default function App() {
         const folderKey = currentPath === "~" ? "~" : currentPath;
         if (folderKey === "~") {
             output = (
-                <div className="flex flex-wrap gap-4 text-sm">
+                <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm">
                     {Object.keys(portfolio).map(key => {
                         const item = portfolio[key];
                         return (
@@ -251,7 +252,7 @@ export default function App() {
             const folder = portfolio[folderKey];
             if (folder && folder.children) {
                 output = (
-                    <div className="flex flex-wrap gap-4 text-sm">
+                    <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm">
                         {Object.keys(folder.children).map(key => (
                             <span key={key} className="text-white">
                                 {key}
@@ -350,12 +351,12 @@ export default function App() {
 
   return (
     <div 
-      className="min-h-screen text-white font-mono text-sm p-4 flex items-center justify-center overflow-hidden"
+      className="min-h-screen text-white font-mono text-sm p-2 sm:p-4 flex items-start sm:items-center justify-center overflow-y-auto"
       style={{ backgroundColor: '#282c34' }}
     >
       <div 
-        className="mx-auto border border-gray-700 rounded-lg shadow-lg overflow-hidden" 
-        style={{ width: '1000px', backgroundColor: '#1a1a1a' }}
+        className="mx-auto border border-gray-700 rounded-lg shadow-lg overflow-hidden w-full max-w-full sm:max-w-4xl my-2 sm:my-0" 
+        style={{ backgroundColor: '#1a1a1a', maxHeight: '95vh' }}
       >
         <div className="flex items-center justify-between p-2" style={{ backgroundColor: '#3c3c3c' }}> 
           <div className="flex space-x-2">
@@ -367,28 +368,30 @@ export default function App() {
           <div></div> 
         </div>
 
-        <div className="p-4">
-            <Neofetch />
+        <div className="p-2 sm:p-4 overflow-y-auto" style={{ maxHeight: 'calc(95vh - 40px)' }}>
+            <div className="hidden md:block">
+              <Neofetch />
+            </div>
             
-            <div className="mb-2 text-gray-400">
+            <div className="mb-2 text-gray-400 text-xs sm:text-sm">
                 Welcome to my portfolio website! Use the terminal below to explore my work. Type <span className="text-yellow-300">help</span> to see available commands.
             </div>
             
             {history.map((entry, index) => (
-            <div key={index} className="mb-2">
-                <div className="flex">
+            <div key={index} className="mb-2 break-words">
+                <div className="flex flex-wrap items-start gap-1 text-xs sm:text-sm">
                 <Prompt path={entry.path === "~" ? "~" : entry.path} />
-                <span>{entry.cmd}</span>
+                <span className="break-all">{entry.cmd}</span>
                 </div>
-                {entry.output && <div className="mt-1 text-gray-200">{entry.output}</div>}
+                {entry.output && <div className="mt-1 text-gray-200 text-xs sm:text-sm break-words">{entry.output}</div>}
             </div>
             ))}
 
-            <div className="flex" ref={bottomRef}>
+            <div className="flex flex-wrap items-start gap-1" ref={bottomRef}>
             <Prompt path={currentPath} />
             <input
                 ref={inputRef}
-                className="bg-transparent outline-none flex-1 text-white"
+                className="bg-transparent outline-none flex-1 text-white text-xs sm:text-sm min-w-0"
                 value={input}
                 onChange={e => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
