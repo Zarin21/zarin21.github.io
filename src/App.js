@@ -197,7 +197,20 @@ export default function App() {
         return;
     } 
     else if (cmd === 'help') {
-        output = <div className="text-gray-500">Available commands: ls, cat, cd, clear, help, open</div>;
+        output = (
+            <div className="text-gray-300 space-y-2">
+                <div className="text-white font-semibold mb-3">Available Commands:</div>
+                <div className="space-y-1">
+                    <div><span className="text-yellow-400">ls</span> - List files and directories in the current location</div>
+                    <div><span className="text-yellow-400">cat [file]</span> - Display the contents of a file</div>
+                    <div><span className="text-yellow-400">cd [directory]</span> - Change directory (use 'cd ..' to go back, 'cd ~' for home)</div>
+                    <div><span className="text-yellow-400">open [file]</span> - Open and display a file (same as cat)</div>
+                    <div><span className="text-yellow-400">clear</span> - Clear the terminal screen</div>
+                    <div><span className="text-yellow-400">help</span> - Show this help message</div>
+                </div>
+                <div className="text-gray-500 text-sm mt-3">Tip: Use Tab for command and file name autocompletion</div>
+            </div>
+        );
     }
     else if (cmd === 'cd') {
         if (!arg || arg === '~' || arg === '/') {
