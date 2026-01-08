@@ -6,7 +6,7 @@ export const portfolio = {
     isFolder: false,
     content: (
       <div className="max-w-xl text-xs sm:text-sm">
-        <p className="text-black">Zarin Subah</p>
+        <p className="text-blackz">Zarin Subah</p>
         <p className="text-gray-400 mt-1">Software Developer</p>
         <p className="text-gray-400 mt-1">Interested in:</p>
         <ul className="list-disc list-inside text-gray-400">
@@ -56,66 +56,209 @@ export const portfolio = {
     isFolder: true,
     children: {
       tinker: {
-        isFolder: false,
-        content: (
-          <div className="text-xs sm:text-sm">
-            <p className="text-green-500">
-              Recommendation system using Stochastic Gradient Descent
-            </p>
-            <p className="text-gray-400">
-              Mobile app & web scraping service: Python, Selenium, Java, Android
-              Studio.
-            </p>
-            <a
-              href="https://github.com/tinker-app/tinker"
-              className="text-blue-500 underline break-all"
-            >
-              Github
-            </a>
-          </div>
-        ),
+        isFolder: true,
+        children: {
+          'README.md': {
+            isFolder: false,
+            content: (
+              <div className="text-xs sm:text-sm space-y-4">
+                <h2 className="text-green-500 text-lg font-semibold">
+                  Tinker - Recommendation System
+                </h2>
+                <p className="text-gray-400">
+                  A comprehensive recommendation system using Stochastic
+                  Gradient Descent
+                </p>
+                <div className="space-y-2">
+                  <h3 className="text-white font-medium">Technologies Used:</h3>
+                  <ul className="list-disc list-inside text-gray-400 space-y-1">
+                    <li>Python with machine learning algorithms</li>
+                    <li>Selenium for web scraping</li>
+                    <li>Java backend services</li>
+                    <li>Android Studio for mobile app</li>
+                  </ul>
+                </div>
+                <div className="pt-4">
+                  <a
+                    href="https://github.com/tinker-app/tinker"
+                    className="text-blue-500 underline break-all"
+                  >
+                    View on GitHub →
+                  </a>
+                </div>
+              </div>
+            ),
+          },
+          'architecture.txt': {
+            isFolder: false,
+            content: (
+              <div className="text-xs sm:text-sm space-y-4">
+                <h3 className="text-white font-medium">System Architecture</h3>
+                <div className="bg-gray-800 p-3 rounded text-gray-300 font-mono text-xs">
+                  <div>Mobile App (Android) → API Gateway → ML Engine</div>
+                  <div>Web Scraper → Data Pipeline → Recommendation Model</div>
+                  <div>Real-time sync via REST APIs</div>
+                </div>
+                <p className="text-gray-400">
+                  The system combines web scraping, machine learning, and mobile
+                  development to provide personalized recommendations.
+                </p>
+              </div>
+            ),
+          },
+        },
       },
       'web-crawler': {
-        isFolder: false,
-        content: (
-          <div className="text-xs sm:text-sm">
-            <p className="text-green-500">Web Crawler & Search Engine</p>
-            <p className="text-gray-400">
-              React frontend & Spring backend with MongoDB.
-            </p>
-            <p className="text-gray-400">
-              Used Inverted Index table for fast queries.
-            </p>
-            <a
-              href="https://github.com/Zarin21/Web-Crawler "
-              className="text-blue-500 underline break-all"
-            >
-              Github
-            </a>
-          </div>
-        ),
+        isFolder: true,
+        children: {
+          'README.md': {
+            isFolder: false,
+            content: (
+              <div className="text-xs sm:text-sm space-y-4">
+                <h2 className="text-green-500 text-lg font-semibold">
+                  Web Crawler & Search Engine
+                </h2>
+                <p className="text-gray-400">
+                  Full-stack search engine with distributed crawling and
+                  indexing capabilities
+                </p>
+                <div className="space-y-2">
+                  <h3 className="text-white font-medium">Technologies Used:</h3>
+                  <ul className="list-disc list-inside text-gray-400 space-y-1">
+                    <li>React frontend with modern UI</li>
+                    <li>Spring Boot backend with microservices</li>
+                    <li>MongoDB for document storage</li>
+                    <li>Distributed crawling architecture</li>
+                    <li>Inverted index for fast search queries</li>
+                  </ul>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-white font-medium">Key Features:</h3>
+                  <ul className="list-disc list-inside text-gray-400 space-y-1">
+                    <li>Distributed web crawling</li>
+                    <li>Real-time search indexing</li>
+                    <li>Advanced query processing</li>
+                    <li>Scalable document storage</li>
+                  </ul>
+                </div>
+                <div className="pt-4">
+                  <a
+                    href="https://github.com/Zarin21/Web-Crawler"
+                    className="text-blue-500 underline break-all"
+                  >
+                    View on GitHub →
+                  </a>
+                </div>
+              </div>
+            ),
+          },
+          'architecture.txt': {
+            isFolder: false,
+            content: (
+              <div className="text-xs sm:text-sm space-y-4">
+                <h3 className="text-white font-medium">System Architecture</h3>
+                <div className="bg-gray-800 p-3 rounded text-gray-300 font-mono text-xs">
+                  <div>Crawler Service → Queue → Indexer → Search API</div>
+                  <div>React UI ← REST API ← Spring Backend ← MongoDB</div>
+                  <div>Load Balancer → Multiple Crawler Instances</div>
+                </div>
+                <p className="text-gray-400">
+                  Distributed architecture supporting horizontal scaling and
+                  high availability.
+                </p>
+              </div>
+            ),
+          },
+        },
       },
       'regression-model': {
-        isFolder: false,
-        content: (
-          <div className="text-xs sm:text-sm">
-            <p className="text-green-500">Focus tracking service</p>
-            <p className="text-gray-400">
-              Machine learning with EEG brainwaves and pupil diameter to infer
-              real-time productivity.
-            </p>
-            <p className="text-gray-400">
-              Frontend: React & WebSockets, Backend: FastAPI, Node.js, DB:
-              Pocketbase with SQLite
-            </p>
-            <a
-              href="https://github.com/LeFocus/regression-model"
-              className="text-blue-500 underline break-all"
-            >
-              Github
-            </a>
-          </div>
-        ),
+        isFolder: true,
+        children: {
+          'README.md': {
+            isFolder: false,
+            content: (
+              <div className="text-xs sm:text-sm space-y-4">
+                <h2 className="text-green-500 text-lg font-semibold">
+                  LeFocus - Focus Tracking Service
+                </h2>
+                <p className="text-gray-400">
+                  AI-powered productivity tracking using brainwave analysis and
+                  computer vision
+                </p>
+                <div className="space-y-2">
+                  <h3 className="text-white font-medium">Technologies Used:</h3>
+                  <ul className="list-disc list-inside text-gray-400 space-y-1">
+                    <li>Machine Learning with EEG data processing</li>
+                    <li>Computer vision for pupil tracking</li>
+                    <li>React frontend with real-time dashboards</li>
+                    <li>FastAPI backend for ML inference</li>
+                    <li>Node.js for real-time communication</li>
+                    <li>Pocketbase with SQLite for data storage</li>
+                  </ul>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-white font-medium">Key Features:</h3>
+                  <ul className="list-disc list-inside text-gray-400 space-y-1">
+                    <li>Real-time brainwave analysis</li>
+                    <li>Pupil diameter tracking</li>
+                    <li>Productivity score calculation</li>
+                    <li>Historical trend analysis</li>
+                    <li>WebSocket-based live updates</li>
+                  </ul>
+                </div>
+                <div className="pt-4">
+                  <a
+                    href="https://github.com/LeFocus/regression-model"
+                    className="text-blue-500 underline break-all"
+                  >
+                    View on GitHub →
+                  </a>
+                </div>
+              </div>
+            ),
+          },
+          'architecture.txt': {
+            isFolder: false,
+            content: (
+              <div className="text-xs sm:text-sm space-y-4">
+                <h3 className="text-white font-medium">System Architecture</h3>
+                <div className="bg-gray-800 p-3 rounded text-gray-300 font-mono text-xs">
+                  <div>EEG Device → ML Pipeline → FastAPI → WebSocket</div>
+                  <div>
+                    Camera → CV Pipeline → Pupil Tracking → Real-time Analysis
+                  </div>
+                  <div>
+                    React Dashboard ← WebSocket ← Node.js Server ← Pocketbase
+                  </div>
+                </div>
+                <p className="text-gray-400">
+                  Multi-modal AI system combining neuroscience, computer vision,
+                  and real-time data processing.
+                </p>
+              </div>
+            ),
+          },
+          'demo.mp4': {
+            isFolder: false,
+            content: (
+              <div className="text-xs sm:text-sm space-y-4">
+                <h3 className="text-white font-medium">Demo Video</h3>
+                <div className="bg-gray-800 p-4 rounded text-center">
+                  <p className="text-gray-400 mb-2">
+                    Live demonstration of focus tracking
+                  </p>
+                  <div className="text-yellow-500 text-sm">
+                    🎥 Video demo would be embedded here
+                  </div>
+                  <p className="text-gray-500 text-xs mt-2">
+                    Shows real-time productivity analysis using EEG and computer
+                    vision
+                  </p>
+                </div>
+              </div>
+            ),
+          },
+        },
       },
     },
   },
@@ -180,7 +323,14 @@ const MONTEREY_COLORS = {
 }
 
 // Desktop Icon Component
-const DesktopIcon = ({ name, isFolder, position, onDrag, onDoubleClick }) => {
+const DesktopIcon = ({
+  name,
+  isFolder,
+  isSubfolder = false,
+  position,
+  onDrag,
+  onDoubleClick,
+}) => {
   const [isDragging, setIsDragging] = useState(false)
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
   const [lastClickTime, setLastClickTime] = useState(0)
@@ -197,8 +347,8 @@ const DesktopIcon = ({ name, isFolder, position, onDrag, onDoubleClick }) => {
     setIsDragging(true)
     const rect = iconRef.current.getBoundingClientRect()
     setDragOffset({
-      x: (e.clientX || e.touches?.[0]?.clientX) - rect.left - rect.width / 2,
-      y: (e.clientY || e.touches?.[0]?.clientY) - rect.top - rect.height / 2,
+      x: (e.clientX || e.touches?.[0]?.clientX) - rect.left,
+      y: (e.clientY || e.touches?.[0]?.clientY) - rect.top,
     })
   }
 
@@ -260,8 +410,8 @@ const DesktopIcon = ({ name, isFolder, position, onDrag, onDoubleClick }) => {
           >
             <path
               d="M8 12h20l4 8h24c4 0 8 4 8 8v20c0 4-4 8-8 8H8c-4 0-8-4-8-8V20c0-4 4-8 8-8z"
-              fill="#FFD60A"
-              stroke="#FFB800"
+              fill={isSubfolder ? '#34C759' : '#FFD60A'}
+              stroke={isSubfolder ? '#28A745' : '#FFB800'}
               strokeWidth="2"
             />
           </svg>
@@ -1371,13 +1521,29 @@ export default function App() {
     }))
   }
 
-  const handleIconDoubleClick = (name) => {
-    const item = portfolio[name]
+  const handleIconDoubleClick = (name, parentPath = '') => {
+    let item
+    if (parentPath) {
+      // Navigate to nested folder
+      const pathParts = parentPath.split('/')
+      let current = portfolio
+      for (const part of pathParts) {
+        if (current[part] && current[part].children) {
+          current = current[part].children
+        }
+      }
+      item = current[name]
+    } else {
+      item = portfolio[name]
+    }
+
     if (item) {
       if (item.isFolder) {
         // Open folder in a window showing its contents
+        const fullPath = parentPath ? `${parentPath}/${name}` : name
+        const windowId = `folder-${fullPath}`
         const folderContent = (
-          <div className="p-4">
+          <div className="p-4" data-window-id={windowId}>
             <div className="text-lg font-semibold mb-4">{name}</div>
             <div className="space-y-2">
               {Object.keys(item.children || {}).map((key) => {
@@ -1385,32 +1551,78 @@ export default function App() {
                 return (
                   <div
                     key={key}
-                    className="p-2 hover:bg-gray-100 rounded cursor-pointer"
+                    className="p-2 hover:bg-gray-100 rounded cursor-pointer flex items-center gap-2"
                     onClick={() => {
-                      if (!child.isFolder) {
-                        openWindow(`file-${key}`, key, child.content)
+                      if (child.isFolder) {
+                        // Close the current folder window before opening the subfolder
+                        closeWindow(windowId)
+                        handleIconDoubleClick(key, fullPath)
+                      } else {
+                        openWindow(
+                          `file-${fullPath}/${key}`,
+                          key,
+                          child.content
+                        )
                       }
                     }}
                   >
-                    <div className="font-medium">{key}</div>
-                    {child.content && typeof child.content === 'object' && (
-                      <div className="text-sm text-gray-500 mt-1">
-                        {
-                          React.Children.toArray(
-                            child.content.props.children
-                          )[0]?.props?.children
-                        }
-                      </div>
+                    {child.isFolder ? (
+                      <svg
+                        className="w-5 h-5 flex-shrink-0"
+                        viewBox="0 0 64 64"
+                        fill="none"
+                      >
+                        <path
+                          d="M8 12h20l4 8h24c4 0 8 4 8 8v20c0 4-4 8-8 8H8c-4 0-8-4-8-8V20c0-4 4-8 8-8z"
+                          fill="#34C759"
+                          stroke="#28A745"
+                          strokeWidth="2"
+                        />
+                      </svg>
+                    ) : (
+                      <svg
+                        className="w-5 h-5 flex-shrink-0"
+                        viewBox="0 0 64 64"
+                        fill="none"
+                      >
+                        <rect
+                          x="12"
+                          y="8"
+                          width="40"
+                          height="48"
+                          rx="2"
+                          fill="#007AFF"
+                          stroke="#0051D5"
+                          strokeWidth="2"
+                        />
+                        <path d="M12 20h40" stroke="#0051D5" strokeWidth="2" />
+                      </svg>
                     )}
+                    <div className="flex-1">
+                      <div className="font-medium">{key}</div>
+                      {child.content && typeof child.content === 'object' && (
+                        <div className="text-sm text-gray-500 mt-1">
+                          {
+                            React.Children.toArray(
+                              child.content.props.children
+                            )[0]?.props?.children
+                          }
+                        </div>
+                      )}
+                    </div>
                   </div>
                 )
               })}
             </div>
           </div>
         )
-        openWindow(`folder-${name}`, name, folderContent)
+        openWindow(windowId, name, folderContent)
       } else {
-        openWindow(`file-${name}`, name, item.content)
+        openWindow(
+          `file-${parentPath ? `${parentPath}/${name}` : name}`,
+          name,
+          item.content
+        )
       }
     }
   }
